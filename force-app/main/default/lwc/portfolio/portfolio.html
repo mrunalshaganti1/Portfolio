@@ -1,0 +1,519 @@
+<template>
+    <div class="scroll-watcher"></div>
+    <div class="profile-page">
+        <template for:each= {profile.data} for:item="profile">
+            <div key={profile.Id} class="item">
+
+                <!--------Navigation Bar-------->
+
+                <div class="navbar">
+                    <div class="main-link">
+                        <a href="#profile" onclick={onProfileClick}>{profile.Name}</a>
+                    </div>
+                    <div class="slds-p-around_medium lgc-bg mobile-nav">
+                        <lightning-button-menu alternative-text="Show menu" menu-alignment="right">
+                            <a href="#"><lightning-menu-item label="Home" onclick={onProfileClick}></lightning-menu-item></a>
+                            <lightning-menu-item label="Resume" onclick={openResumeModal}></lightning-menu-item>
+                            <lightning-menu-item label="Projects" onclick={onProjectClick}></lightning-menu-item>
+                            <lightning-menu-item label="Certifications" onclick={onCertificateClick}></lightning-menu-item>
+                        </lightning-button-menu>
+                    </div>
+                    <ul class="slds-list_horizontal slds-has-block-links_space nav-menu">
+                        <li>
+                            <a href="#" onclick={openResumeModal}>Resume</a>
+                        </li>
+                        <li>
+                            <a href="#about-me" onclick={onProfileClick}>About Me</a>
+                        </li>
+                        <li>
+                            <a href="#experience" onclick={onProfileClick}>Expeirence</a>
+                        </li>
+                        <li>
+                            <a href="#education" onclick={onProfileClick}>Education</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick={onProjectClick}>Projects</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick={onCertificateClick}>Certifications</a>
+                        </li>
+                        <li>
+                            <a href="#contact-section" onclick={onProfileClick}>Contact Me</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--------Navigation Bar - End---->
+
+                <!-----Profile Container------>
+
+                <template if:true={profile_page}>
+                    <div class="page-container" id="profile">
+                        <div class="profile-box">
+                            <div class="profile-box-left">
+                                <p class="welcome-tag">Welcome to my portfolio!</p>
+                                <div class="display-name">
+                                    {profile.Name}
+                                </div>
+                                <div class="brief-text">
+                                    {profile.Brief_Text__c}
+                                </div>
+                            </div>
+                            <div class="profile-box-right">
+                                <div class="candidate-image" style={backgroundStyle}>
+                                    <img alt="0f5b7deb-38e3-4cd8-94cd-99bdf5336514_small.jpg" src="/sfsites/c/servlet/rtaImage?eid=a01Hn00000g28g4&amp;feoid=00NHn00000PjmzM&amp;refid=0EMHn000004YwQg" class="candidate-image-img">
+                                </div>
+                            </div>
+                        </div>
+                      <!-----Profile Container - End------>
+
+                        <!-----Techstack Container------>
+
+                        <div class="tech-stack-box">
+                            <h1>Tech Stack</h1>
+                            <hr/>
+                            <div class="mobile-stack">
+                                <lightning-tabset variant="vertical">
+                                    <lightning-tab label="Programming Languages">
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+                                          </span> 
+                                          <span style="color: black;">Java</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                                          </span> 
+                                          <span style="color: black;">Python</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" />
+                                          </span>
+                                          <span style="color: black;">C</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                                          </span>
+                                          <span style="color: black;">C++</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" />
+                                          </span>
+                                          <span style="color: black;">SQL</span> </p>
+                                    </lightning-tab>
+                                    <lightning-tab label="Web Development">
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                                          </span>
+                                          <span style="color: black;">HTML</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                                          </span>
+                                          <span style="color: black;">CSS</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                                          </span>
+                                          <span style="color: black;">JavaScript</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                                          </span>
+                                          <span style="color: black;">React.js</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
+                                          </span>
+                                          <span style="color: black;">Node.js</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
+                                          </span>
+                                          <span style="color: black;">Express.js</span> </p>
+                                    </lightning-tab>
+                                    <lightning-tab label="Database Technologies">
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+                                          </span>
+                                          <span style="color: black;">MySql</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" />
+                                          </span>
+                                          <span style="color: black;">MongoDB</span> </p>
+                                    </lightning-tab>
+                                    <lightning-tab label="Salesforce">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" style="height: 70px; width:100px; margin-bottom:0px;"/>
+                                        <p>Administrator</p>
+                                        <p>Apex Programming</p>
+                                        <p>Lightning Web Components</p>
+                                        <p>Work Flows</p>
+                                        <p>SOQL</p>
+                                        <p>Triggers</p>
+                                        <p>Reports & Dashboards</p>
+                                        <p>Vlocity/Omni Studio</p>
+                                    </lightning-tab>
+                                    <lightning-tab label="Framework & Tools">
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" />
+                                          </span>
+                                          <span style="color: black;">Spring Boot</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" />
+                                          </span>
+                                          <span style="color: black;">Eclipse</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+                                          </span>
+                                          <span style="color: black;">Visual Studio</span> </p>
+                                        <p class="skill"><span>
+                                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" />
+                                          </span>
+                                          <span style="color: black;">Postman</span> </p>
+                                    </lightning-tab>
+                                </lightning-tabset>
+                            </div>
+        
+
+                            <div class="tech-stack-skills">
+                                <div class="programming-languages">
+                                    <h3>Programming Languages</h3>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+                                      </span> 
+                                      <span>Java</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                                      </span> 
+                                      <span>Python</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" />
+                                      </span>
+                                      <span>C</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                                      </span>
+                                      <span>C++</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" />
+                                      </span>
+                                      <span>SQL</span> </p>
+                                </div>
+                                <div class="web-development">
+                                    <h3>Web Development</h3>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                                      </span>
+                                      <span>HTML</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                                      </span>
+                                      <span>CSS</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                                      </span>
+                                      <span>JavaScript</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                                      </span>
+                                      <span>React.js</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" />
+                                      </span>
+                                      <span>Node.js</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
+                                      </span>
+                                      <span>Express.js</span> </p>
+                                </div>
+                                <div class="database-technologies">
+                                    <h3>Database Technologies</h3>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
+                                      </span>
+                                      <span>MySql</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" />
+                                      </span>
+                                      <span>MongoDB</span> </p>
+                                </div>
+                                <div class="salesforce-platform">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/salesforce/salesforce-original.svg" style="height: 70px; width:100px; margin-bottom:0px;"/>
+                                    <p>Administrator</p>
+                                    <p>Apex Programming</p>
+                                    <p>Lightning Web Components</p>
+                                    <p>Work Flows</p>
+                                    <p>SOQL</p>
+                                    <p>Triggers</p>
+                                    <p>Reports & Dashboards</p>
+                                    <p>Vlocity/Omni Studio</p>
+                                </div>
+                                <div class="framework-tools">
+                                    <h3>Framework & Tools</h3>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" />
+                                      </span>
+                                      <span>Spring Boot</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/eclipse/eclipse-original.svg" />
+                                      </span>
+                                      <span>Eclipse</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />
+                                      </span>
+                                      <span>Visual Studio</span> </p>
+                                    <p class="skill"><span>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" />
+                                      </span>
+                                      <span>Postman</span> </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-----Techstack Container- End------>
+
+                        <!----About Me---->
+
+                        <div class="about-me-section" id="about-me">
+                            <h1>About Me</h1>
+                            <hr/>
+                            <div class="about-me">
+                                {profile.About_Me__c}
+                            </div>
+                        </div>
+                        <!----About Me-End---->
+
+                        <!----Experience Section-->
+                        <div class="experience-section" id="experience">
+                            <h1>Experience</h1>
+                            <hr/>
+                            <div class="timeline-container">
+                                <template for:each={experiences} for:item="item" for:index="index">
+                                  <div key={item.id} class="timeline-item">
+                                    <div class="timeline-left">
+                                        <div class="timeline-date">{item.Start_Date__c} - {item.End_Date__c}</div>
+                                        <div class="timeline-icon">
+                                        <lightning-icon class="slds-align_absolute-center" icon-name="standard:location" size="medium"></lightning-icon>
+                                        <p>{item.Location__c}</p>
+                                    </div>
+                                    </div>
+                                    <div class="timeline-right">
+                                        <div class="timeline-info">
+                                            <div class="company-head">{item.Name}</div>
+                                            <div class="company-dez">{item.Designation__c}</div>
+                                            <ul class="description-bullets">
+                                                <template for:each={item.Description__c} for:item="point">
+                                                  <li key={point} class="bullets">{point}</li>
+                                                </template>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </template>
+                              </div>
+                        </div>
+                        <!----Experience Section -End---->
+
+                        <!---Education Section---->
+
+                        <div class="education-section" id="education">
+                            <h1>Education</h1>
+                            <hr/>
+                            <template for:each={eduData.data} for:item="item" for:index="index">
+                                <div key={item.Id} class="education-box">
+                                    <div class="to-flex-container">
+                                        <div class="logo-container">
+                                            <lightning-formatted-rich-text value={item.Logo_Field__c}></lightning-formatted-rich-text>
+                                        </div>
+                                     <div class="box-container">
+                                        <div class="header">
+                                            <div class="education-header">
+                                                <h2>{item.Name}</h2>
+                                                <p>{item.Start_Date__c} - {item.End_Date__c}</p>
+                                            </div>
+                                            <div class="education-header-subhead">
+                                                <h4>{item.Degree_Type__c} in {item.Concentration__c}</h4>
+                                            </div>
+                                        </div>
+                                        <div class="education-body">
+                                            <p>{item.Revelant_Courses__c}</p>
+                                            <a href={item.University_Link__c} target="_blank"><button class="slds-button slds-button_brand">View Website</button></a>
+                                        </div>
+                                    </div>  
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <!---Education Section -End---->
+
+                        <!----Contact Section---->
+                        <div class="contact-section" id="contact-section">
+                            <h1>Contact Me</h1>
+                            <hr/>
+                            <div class="contact-container">
+                                <div class="contact-details">
+                                    <div class="map-container">
+                                        <lightning-map map-markers={mapMarkers} zoom-level="15"> </lightning-map>
+                                    </div>
+                                    <div class="details-box">
+                                        <h2><u>Find Me On</u></h2>
+                                        <span class="contact-info">
+                                            <img width="50" height="50" class="contact-icons" src="https://img.icons8.com/ios-filled/50/ringer-volume.png" alt="ringer-volume"/> 
+                                            <p>{profile.Contact_Number__c}</p>
+                                        </span>
+                                        <span class="contact-info">
+                                            <img width="48" height="48" class="contact-icons" src="https://img.icons8.com/fluency/48/mail--v1.png" alt="mail--v1"/>
+                                            <p>{profile.Email__c}</p>
+                                        </span>
+                                        <div class="svg-icons">
+                                            <span>
+                                                <a href={profile.LinkedIn_Link__c}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                                                        <path d="M 9 4 C 6.2504839 4 4 6.2504839 4 9 L 4 41 C 4 43.749516 6.2504839 46 9 46 L 41 46 C 43.749516 46 46 43.749516 46 41 L 46 9 C 46 6.2504839 43.749516 4 41 4 L 9 4 z M 9 6 L 41 6 C 42.668484 6 44 7.3315161 44 9 L 44 41 C 44 42.668484 42.668484 44 41 44 L 9 44 C 7.3315161 44 6 42.668484 6 41 L 6 9 C 6 7.3315161 7.3315161 6 9 6 z M 14 11.011719 C 12.904779 11.011719 11.919219 11.339079 11.189453 11.953125 C 10.459687 12.567171 10.011719 13.484511 10.011719 14.466797 C 10.011719 16.333977 11.631285 17.789609 13.691406 17.933594 A 0.98809878 0.98809878 0 0 0 13.695312 17.935547 A 0.98809878 0.98809878 0 0 0 14 17.988281 C 16.27301 17.988281 17.988281 16.396083 17.988281 14.466797 A 0.98809878 0.98809878 0 0 0 17.986328 14.414062 C 17.884577 12.513831 16.190443 11.011719 14 11.011719 z M 14 12.988281 C 15.392231 12.988281 15.94197 13.610038 16.001953 14.492188 C 15.989803 15.348434 15.460091 16.011719 14 16.011719 C 12.614594 16.011719 11.988281 15.302225 11.988281 14.466797 C 11.988281 14.049083 12.140703 13.734298 12.460938 13.464844 C 12.78117 13.19539 13.295221 12.988281 14 12.988281 z M 11 19 A 1.0001 1.0001 0 0 0 10 20 L 10 39 A 1.0001 1.0001 0 0 0 11 40 L 17 40 A 1.0001 1.0001 0 0 0 18 39 L 18 33.134766 L 18 20 A 1.0001 1.0001 0 0 0 17 19 L 11 19 z M 20 19 A 1.0001 1.0001 0 0 0 19 20 L 19 39 A 1.0001 1.0001 0 0 0 20 40 L 26 40 A 1.0001 1.0001 0 0 0 27 39 L 27 29 C 27 28.170333 27.226394 27.345035 27.625 26.804688 C 28.023606 26.264339 28.526466 25.940057 29.482422 25.957031 C 30.468166 25.973981 30.989999 26.311669 31.384766 26.841797 C 31.779532 27.371924 32 28.166667 32 29 L 32 39 A 1.0001 1.0001 0 0 0 33 40 L 39 40 A 1.0001 1.0001 0 0 0 40 39 L 40 28.261719 C 40 25.300181 39.122788 22.95433 37.619141 21.367188 C 36.115493 19.780044 34.024172 19 31.8125 19 C 29.710483 19 28.110853 19.704889 27 20.423828 L 27 20 A 1.0001 1.0001 0 0 0 26 19 L 20 19 z M 12 21 L 16 21 L 16 33.134766 L 16 38 L 12 38 L 12 21 z M 21 21 L 25 21 L 25 22.560547 A 1.0001 1.0001 0 0 0 26.798828 23.162109 C 26.798828 23.162109 28.369194 21 31.8125 21 C 33.565828 21 35.069366 21.582581 36.167969 22.742188 C 37.266572 23.901794 38 25.688257 38 28.261719 L 38 38 L 34 38 L 34 29 C 34 27.833333 33.720468 26.627107 32.990234 25.646484 C 32.260001 24.665862 31.031834 23.983076 29.517578 23.957031 C 27.995534 23.930001 26.747519 24.626988 26.015625 25.619141 C 25.283731 26.611293 25 27.829667 25 29 L 25 38 L 21 38 L 21 21 z"></path>
+                                                        </svg>
+                                                </a>
+                                                <a href={profile.Github_Link__c}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 64 64">
+                                                        <path d="M32,10c12.15,0,22,9.85,22,22c0,9.768-6.369,18.045-15.179,20.916c0.002-0.008,0.006-0.021,0.006-0.021	s-1.485-0.696-1.453-1.938c0.035-1.367,0-4.556,0-5.727c0-2.01-1.272-3.434-1.272-3.434s9.977,0.112,9.977-10.533	c0-4.107-2.147-6.245-2.147-6.245s1.128-4.385-0.39-6.245c-1.701-0.184-4.749,1.626-6.05,2.472c0,0-2.062-0.846-5.492-0.846	c-3.43,0-5.492,0.846-5.492,0.846c-1.301-0.846-4.348-2.656-6.05-2.472c-1.518,1.86-0.39,6.245-0.39,6.245s-2.147,2.137-2.147,6.245	c0,10.645,9.977,10.533,9.977,10.533s-1.005,1.136-1.225,2.806c-0.696,0.236-1.721,0.528-2.549,0.528	c-2.165,0-3.812-2.105-4.416-3.078c-0.595-0.96-1.815-1.766-2.953-1.766c-0.749,0-1.115,0.375-1.115,0.803s1.05,0.727,1.743,1.521	c1.461,1.674,1.435,5.438,6.641,5.438c0.565,0,1.719-0.139,2.588-0.256c-0.005,1.185-0.007,2.436,0.012,3.167	c0.031,1.242-1.453,1.938-1.453,1.938s0.004,0.012,0.006,0.021C16.369,50.045,10,41.768,10,32C10,19.85,19.85,10,32,10z"></path>
+                                                        </svg>
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>                                      
+                                </div>
+                                <div class="contact-form-box">
+                                    <div class="contact-form">
+                                        <form onsubmit={handleSubmit}>
+                                            <lightning-input value={name} type="text" label="Name" placeholder="Enter Your Name" onchange={handleNameChange}></lightning-input>
+                                            <lightning-input value={email} type="email" label="Email" placeholder="Enter Your Email" onchange={handleEmailChange}></lightning-input>
+                                            <lightning-textarea value={message}  label="Message" placeholder="Enter your Message" onchange={handleMessageChange}></lightning-textarea>
+                                            <button type="submit" class="slds-button slds-button_brand slds-align_absolute-center">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>                              
+                            </div>
+                        </div>
+                        
+                    </div>
+                </template>
+                <!----Contact Section -End------>
+
+                <!---Project Section-------->
+                <template if:true={project_page}>
+                    <div class="project-page">
+                        <div class="project-section">
+                            <div class="project-hero">
+                                <div class="hero-left">
+                                    <img src={project_hero_url}>
+                                </div>
+                                <div class="hero-right">
+                                    <h1>Projects</h1>
+                                    <p>Explore the curated collection of my professional projects where creativity intersects with technology to create impactful solutions.</p>
+                                </div>
+                            </div>
+                            <div class="projects-display">
+                                <template for:each={proData.data} for:item="item" for:index="index">
+                                    <div key={item.Id} class="projects">
+                                        <a href={item.Project_Link__c} style="text-decoration: none;">
+                                            <div class="project-details">
+                                                <h2>{item.Name}</h2>
+                                                <p class="project-description">🔥 {item.Description__c}</p>
+                                                <p class="project-description">⚙ {item.Technologies_Used__c}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>         
+                </template>
+                <!---Project Section - End------>
+                
+                <!----Certifications Section------>
+
+                <template if:true={certificate_page}>
+                    <div class="certificate-page">
+                        <div class="certificate-section">
+                            <div class="certificate-hero">
+                                <div class="certificate-hero-left">
+                                    <img src={certificate_Url}>
+                                </div>
+                                <div class="hero-right">
+                                    <h1>Certifications</h1>
+                                    <p>Unveiling a journey of excellence and innovation, this section celebrates my academic milestones and professional certifications that underscore my dedication and expertise in the dynamic realm of computer science.</p>
+                                </div>
+                            </div>
+                            <div class="certificate-display">
+                                <template for:each={certiData.data} for:item="item" for:index="index">
+                                    <div key={item.Id} class="certificate">
+                                        <a href={item.Certification_Link__c} style="text-decoration: none;">
+                                            <div class="cert-head">
+                                                <img src={coursera_logo_Url}>
+                                            </div>
+                                            <div class="certificate-details">
+                                                <h2 style="color: rgb(0, 28, 85);">{item.Name}</h2>
+                                                <p style="color: rgb(127, 141, 170);">- {item.Certification_Platform__c}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <!----Certifications Section -End------>
+
+                <!----Resume Section---->
+
+                <template if:true={isResumeModalOpen}>
+                    <!-- Modal/Popup Box LWC starts here -->
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <!-- Modal/Popup Box LWC header here -->
+                            <header class="slds-modal__header">
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeResumeModal}>
+                                    <lightning-icon icon-name="utility:close"
+                                        alternative-text="close"
+                                        variant="inverse"
+                                        size="small" ></lightning-icon>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Resume Preview/Download</h2>
+                            </header>
+                            <!-- Modal/Popup Box LWC body starts here -->
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <lightning-card title="Resume">
+                                    <template for:each={fileList} for:item="item">
+                                        <div key={item.value} class="slds-box">
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                                                  <p><strong>FileName - </strong>{item.label}</p>
+                                                </div>
+                                                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                                                  <a href={item.url} download><lightning-button label="Download"></lightning-button></a>
+                                                </div>
+                                                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                                                  <lightning-button label="Preview" style="display: none;"
+                                                        variant="brand"
+                                                        data-id={item.value}
+                                                        onclick={resumePreviewHandler}
+                                                  ></lightning-button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </lightning-card>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </template>
+                <!----Resume Section - End--->
+
+                <!----Footer Section---->
+                <hr class="footer-bar"/>
+                <div class="footer-cover">
+                    <div class="footer">
+                        <div class="copyrights">
+                            {profile.Copyrights__c}
+                        </div>
+                        <div class="platfrom-used">
+                            Developed by Mrunal Shaganti with the help of Salesforce LWC.
+                        </div>
+                    </div>
+                </div>
+                <!----Footer Section -End---->
+
+            </div>     
+        </template>
+    </div>
+    
+</template>

@@ -1,0 +1,1831 @@
+.scroll-watcher{
+    height: 4px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #ff0000;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    border-radius: 60px;
+
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher{
+    to { scale: 1 1;}
+}
+
+/* Navbar Section*/
+
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1px 3px -2px black;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-left: -5px;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: -10%;
+}
+.nav-menu li a{
+    border-radius: 10px;
+    background-color: transparent;
+    transition: background-color 0.8s ease-in-out;
+}
+
+.nav-menu li:hover a, .nav-menu li:focus a{
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+}
+
+
+.main-link{
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 500;
+    gap: 10px;
+    margin-left: -10%;
+}
+.mobile-nav{
+    display: none;
+}
+/* Navbar Section - End*/
+
+/* Profile Container*/
+
+.page-container{
+    border-radius: 30px;
+    margin-left: -5px;
+    margin-right: 5px;
+    background-color:  #edf9fe;
+}
+
+.profile-page{
+    display: flex;
+    font-family: 'Arial', sans-serif; /* Use your preferred sans-serif font */
+    font-size: 16px; /* Adjust the font size as needed */
+    font-weight: normal; /* Use 'bold' for headings */
+    line-height: 1.5; /* Adjust line height for better readability */
+    color: #333; /* Adjust text color to match your design */
+    border-radius: 30px;
+}
+
+.display-name{
+    align-items: center;
+    margin: 15px;
+    margin-bottom: -10px;
+    font-size: 40px;
+    font-weight: 400;
+    font-family: 'Google Sans Bold';
+    font-weight: bold;
+    color: rgb(0, 28, 85);
+}
+.welcome-tag{
+    margin: 15px;
+    margin-bottom: -10px;
+    color: rgb(127, 141, 170);
+    font-weight: 600;
+}
+
+.brief-text{
+    text-align: justify;
+    color: rgb(127, 141, 170);
+    margin: 15px;
+    margin-top: -10px;
+    font-size: 20px;
+    font-family: 'Google Sans Medium';
+}
+
+.profile-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 150px 30px;
+    border-radius: 30px;
+}
+
+.profile-box-left{
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    gap: 20px;
+    margin-right: 20px;
+    margin-top: 45px;
+}
+
+.profile-box-right{
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+    margin-top: 45px;
+}
+
+.candidate-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px; 
+    width: 500px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10rem;
+    background-image: url('@salesforce/resourceUrl/BG_Image');
+}
+
+.candidate-image-img{
+    height: 400px;
+    width: 250px;
+    margin: 15px;
+    border-radius: 30px;
+}
+/* Profile Container - End*/
+
+/* Techstack Container */
+
+.tech-stack-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 190px 30px;
+    border-radius: 30px;
+    background-color: #36454F;
+    border: 1px solid #d9dbdf;
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,.2);
+}
+
+.tech-stack-box h1{
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.tech-stack-box hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: white;
+}
+
+.tech-stack-skills{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    gap: 20px;
+}
+
+.programming-languages{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.programming-languages h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.web-development{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.web-development h3{
+    font-size: 20px;
+    margin-left: 3px;
+    font-weight: 500;
+}
+
+.database-technologies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.database-technologies h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.salesforce-platform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.salesforce-platform p{
+    color: transparent; /* Set text color to transparent */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)); /* Create a linear gradient with white color */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Clip the background to the text */
+}
+.salesforce-platform h3{
+    font-size: 18px;
+    margin-top: 0px;
+    font-weight: 500;
+}
+
+.framework-tools{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.framework-tools h3{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.skill {
+    display: flex;
+    align-items: center; 
+    color: transparent; /* Set text color to transparent */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)); /* Create a linear gradient with white color */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Clip the background to the text */
+}
+.skill img {
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px; 
+}
+
+.mobile-stack{
+    display: none;
+}
+/* Techstack Container - End */
+
+/* About Me */
+
+.about-me-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 150px 30px;
+    background-color: #fff;
+    border-radius: 30px;
+    border: 1px solid #d9dbdf;
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,.2);
+}
+
+.about-me-section h1{
+    color: #171717;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.about-me-section hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+
+.about-me{
+    text-align: justify;
+    font-size: 18px;
+    margin: 3.5rem;
+}
+/* About Me - End */
+
+/* Expirence Section */
+
+.experience-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 150px 30px;
+    border-radius: 30px;
+}
+.experience-section h1{
+    color: #171717;
+    font-size: 30px;
+    font-weight: 600;
+}
+.experience-section hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+
+.timeline-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.timeline-left{
+    display: flex;
+    height: 5%;
+    width: 50%;
+    margin-left: 10%;
+    gap: 10px;
+}
+
+.timeline-date {
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.timeline-right {
+    height: 350px;
+    width: 100%;
+    border-left: 2px solid #000; /* Color of the vertical line */
+    padding-left: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust shadow to taste */
+}
+.timeline-right h2{
+    font-size: 16px;
+    font-weight: 400;
+}
+.timeline-right h3{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.timeline-info{
+    margin: 5px;
+}
+.company-head{
+    font-size: 22px;
+    font-size: 600;
+}
+.company-dez{
+    font-size: 16px;
+    font-weight: 400;
+}
+.timeline-info ul{
+    list-style: inside;
+}
+/* Expirence Section - End */
+
+/* Education Section */
+
+.education-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 150px 30px;
+    border-radius: 30px;
+}
+.education-section h1{
+    color: #171717;
+    font-size: 30px;
+    font-weight: 600;
+}
+.education-section hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+
+.education-box{
+    display: flex;
+}
+
+.to-flex-container{
+    display: flex;
+    align-items: center;
+    grid-area: 15px;
+}
+.logo-container{
+    align-items: center;
+    justify-content: center;
+    height: 170px;
+    width: 230px;
+    border-radius: 100px; /* Example radius */
+    overflow: hidden;
+}
+.box-container{
+    display: flex;
+    flex-direction: column;
+    border: #000 solid;
+    border-radius: 20px;
+    align-items: stretch;
+    max-width: 100%;
+    margin: 50px;
+}
+
+.header{
+    border-radius: 20px 20px 0 0;
+    background-color: rgba(14, 107, 168, 0.467);
+    width: 100%;
+}
+.education-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    gap: 150px;   
+}
+.education-header h2{
+    font-size: 18px;
+    font-weight: 500;
+}
+.education-header p{
+    font-size: 12px;
+}
+
+.education-header-subhead{
+    margin: 10px;
+}
+.education-header-subhead h4{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.education-body{
+    margin: 15px;
+    text-align: justify;
+}
+/* Education Section - End */
+
+/* Contacts Section */
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 150px 30px;
+}
+
+.contact-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+.details-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 10rem;
+    width: 25rem;
+    margin-right: 150px;
+    padding: 25px;
+    background: rgb(214, 214, 11);
+}
+.details-box h2{
+    font-size: 24px;
+    font-weight: 500;
+}
+.map-container{
+    width: 25rem;
+}
+
+.contact-form-box{
+    height: 29rem;
+    width: 24rem;
+    background: rgb(214, 214, 11);
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+.contact-form{
+    align-items: center;
+    font-weight: 400;
+    margin: 2rem;
+    --slds-c-textarea-sizing-min-height: 11rem;
+}
+
+.contact-section h1{
+    color: #171717;
+    font-size: 30px;
+    font-weight: 600;
+}
+.contact-section hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+.svg-icons svg{
+    height: 35px;
+    width: 35px;
+    gap: 10px;
+}
+.contact-icons{
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+.contact-info{
+    display: flex;
+}
+
+
+/* Contacts Section - End */
+
+/* Project Section */
+
+.project-section{
+    background-color: #edf9fe;
+    box-sizing: border-box;
+}
+
+.project-hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px; 
+}
+
+.hero-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.hero-left img{
+    height: 500px;
+    width: 500px;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.hero-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.hero-right h1{
+    font-size: 56px;
+    color: rgb(0, 28, 85);
+}
+.hero-right p{
+    text-align: center;
+    font-size: 18px;
+    color: rgb(127, 141, 170);
+}
+
+.projects-display{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: 1rem 1rem;
+    gap: 1rem 1rem;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 60px;
+}
+.projects{
+    color: #586069;
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,.2);
+    background-color: rgb(166, 225, 250);
+    padding: 2rem;
+    cursor: pointer;
+    flex: 1 1 25%;
+}
+.projects h2{
+    text-align: left;
+    color: #24292e;
+    font-family: Google Sans Regular;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -.5px;
+    overflow: hidden;
+    line-height: 1.2;
+    margin: 0;
+}
+.projects{
+    background-color: transparent;
+    transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+}
+.projects:hover{
+    background-color: rgb(214, 214, 11);
+}
+.project-description{
+    overflow: hidden;
+    text-align: left;
+    display: -webkit-box;
+    font-family: Google Sans Regular;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 0.8rem;
+}
+/* Project Section - End */
+
+/* Certifications Section */
+
+.certificate-section{
+    background-color: #edf9fe;
+    box-sizing: border-box;
+}
+
+.certificate-hero{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px; 
+}
+.certificate-hero-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.certificate-hero-left img{
+    height: 400px;
+    width: 600px;
+    border-radius: 15px;
+    margin: 15px;
+}
+
+.certificate-display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-gap: 1rem 1rem;
+    gap: 1rem 1rem;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 60px;
+}
+
+.certificate{
+    display: flex;
+    flex-direction: column;
+    color: #586069;
+    text-align: center;
+    border: 1px solid #d9dbdf;
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,.2);
+    padding: 2rem;
+    cursor: pointer;
+    flex: 1 1 25%;
+}
+.certificate{
+    background-color: transparent;
+    transition: background-color 0.8s ease-in-out, color 0.8s ease-in-out;
+}
+.certificate:hover{
+    background-color: #0056D2;
+    color: #fff;
+}
+.certificate-details{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+}
+.cert-head{
+    background-color: rgb(166, 225, 250);
+}
+.cert-head img{
+    margin: 10px;
+    height: 110px;
+    width: 130px;
+}
+/* Certifications Section - End */
+
+/* Footer */
+
+.footer-bar{
+    width: 100%;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    height: 3px;
+    background: #c7c7c7;
+    margin-right: 30px;
+}
+.footer-cover{
+    background-color: #fdeaf0;
+    margin-right: 0;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    margin-top: 25px;
+    font-size: 12px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+}
+/* Footer - End */
+
+
+
+
+@media(max-width:1280px){
+    .navbar {
+        padding: 12px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+        margin-right: 0;
+    }
+
+    .main-link {
+        font-size: 22px;
+        margin-left: 0;
+    }
+
+    .nav-menu li a {
+        font-size: 14px;
+    }
+
+    .page-container {
+        border-radius: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .profile-page {
+        flex-direction: column;
+        border-radius: 20px;
+    }
+
+    .display-name {
+        font-size: 32px;
+        margin: 10px 0;
+    }
+
+    .welcome-tag {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .brief-text {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .profile-box {
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .profile-box-left {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .profile-box-right {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .candidate-image {
+        height: 300px;
+        width: 300px;
+        margin: 10px;
+    }
+
+    .candidate-image-img {
+        height: 250px;
+        width: 150px;
+        margin: 10px;
+    }
+
+    .tech-stack-box {
+        margin: 50px 20px 20px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .tech-stack-box h1 {
+        font-size: 24px;
+    }
+
+    .tech-stack-box hr {
+        width: 150px;
+        height: 4px;
+    }
+
+    .tech-stack-skills {
+        display: flex;
+        flex-direction: row; /* Ensure skills remain in a row layout */
+        align-items: baseline;
+        justify-content: space-around; /* Space items evenly */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        margin-top: 0px;
+    }
+
+    .programming-languages,
+    .web-development,
+    .database-technologies,
+    .salesforce-platform,
+    .framework-tools {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1; /* Ensure items take equal space */
+        gap: 20px;
+        margin-top: 0px;
+    }
+
+    .programming-languages h3,
+    .web-development h3,
+    .database-technologies h3,
+    .salesforce-platform h3,
+    .framework-tools h3 {
+        font-size: 18px;
+        margin-top: 0;
+    }
+
+    .salesforce-platform p,
+    .skill {
+        font-size: 16px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .skill img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .about-me-section {
+        margin: 50px 20px 20px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .about-me-section h1 {
+        font-size: 24px;
+    }
+
+    .about-me-section hr {
+        width: 150px;
+        height: 4px;
+    }
+
+    .about-me {
+        font-size: 16px;
+        margin: 2rem;
+    }
+
+    .experience-section {
+        margin: 50px 20px 20px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .experience-section h1 {
+        font-size: 24px;
+    }
+
+    .experience-section hr {
+        width: 150px;
+        height: 4px;
+    }
+
+    .timeline-item {
+        gap: 20px;
+        align-items: center;
+    }
+
+    .timeline-left {
+        width: 100%; /* Full width for better readability */
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .timeline-date {
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .timeline-right {
+        width: 100%;
+        height: fit-content;
+        padding-left: 0;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-right::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        margin: 10px auto;
+    }
+
+    .timeline-right h2 {
+        font-size: 18px;
+    }
+
+    .timeline-right h3 {
+        font-size: 16px;
+    }
+
+    .timeline-info {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .company-head {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .company-dez {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .timeline-info ul {
+        list-style: inside;
+        padding-left: 0;
+        text-align: left;
+    }
+
+    .education-section {
+        margin: 50px 20px 20px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .education-section h1 {
+        font-size: 24px;
+    }
+
+    .education-section hr {
+        width: 150px;
+        height: 4px;
+    }
+
+    .education-box {
+        align-items: center;
+        gap: 20px; /* Add gap between stacked items */
+    }
+
+    .to-flex-container {
+        align-items: center;
+    }
+
+    .logo-container {
+        height: auto;
+        width: 100%;
+        max-width: 170px; /* Maintain the aspect ratio */
+        margin-bottom: 20px; /* Add spacing */
+    }
+
+    .box-container {
+        margin: 20px;
+        width: 100%;
+    }
+
+    .header {
+        border-radius: 20px 20px 0 0;
+        background-color: rgba(14, 107, 168, 0.467);
+        width: 100%;
+    }
+
+    .education-header {
+        gap: 10px; /* Add gap between stacked items */
+        margin: 10px 0;
+        text-align: center; /* Center align text */
+    }
+
+    .education-header h2 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .education-header p {
+        font-size: 12px;
+    }
+
+    .education-header-subhead {
+        margin: 10px 0;
+        text-align: center; /* Center align text */
+    }
+
+    .education-header-subhead h4 {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .education-body {
+        margin: 15px;
+        text-align: justify;
+    }
+
+    .project-hero {
+        flex-direction: column; /* Stack the items vertically */
+        align-items: center; /* Align items to the center horizontally */
+    }
+
+    .hero-left, .hero-right {
+        width: 100%; /* Make each take full width to stack properly */
+    }
+
+    .hero-left img {
+        height: auto; /* Adjust height automatically to maintain aspect ratio */
+        width: 80%; /* Reduce width to fit smaller screens */
+        max-width: 500px; /* Ensure it doesn't exceed its original max size */
+    }
+
+    .hero-right h1 {
+        font-size: 36px; /* Reduce font size for smaller screens */
+    }
+
+    .hero-right p {
+        font-size: 16px; /* Adjust paragraph font size for readability */
+    }
+
+    .projects-display {
+        margin-left: 20px; /* Reduce margin for smaller screens */
+        margin-right: 20px;
+    }
+
+    .projects {
+        flex: 1 3 100%; /* Each project takes full width of the container */
+    }
+
+    .projects h2 {
+        text-align: center; /* Center-align the project titles */
+    }
+
+    .project-description {
+        text-align: justify; /* Justify text for better readability in narrow spaces */
+    }
+
+    .certificate-hero {
+        align-items: center; /* Center align items for a cleaner layout */
+    }
+
+    .certificate-hero-left {
+        width: 100%; /* Full width for the container */
+    }
+    .certificate-hero-left img {
+        height: auto; /* Adjust height automatically */
+        width: 80%; /* Adjust width to fit the screen, maintaining aspect ratio */
+        max-width: 600px; /* Ensure it doesn't exceed its original max size */
+    }
+
+    .certificate-display {
+        justify-content: center; /* Center the certificates for better spacing */
+        margin-left: 20px; /* Adjust margins for smaller screens */
+        margin-right: 20px;
+    }
+
+    .certificate {
+        flex: 1 1 25%; /* Each certificate takes full width of the container */
+        margin-bottom: 20px; /* Add bottom margin for spacing between stacked items */
+    }
+
+    .certificate-details {
+        align-items: center; /* Center-align the details for a consistent look */
+    }
+
+    .cert-head img {
+        height: 90px; /* Adjust image size in the certificate header */
+        width: 110px;
+    }
+
+    .footer-bar, .footer-cover {
+        margin-right: 0;
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 10px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        margin-right: 0;
+    }
+
+    .main-link {
+        font-size: 20px;
+        margin-left: 0;
+    }
+
+    .nav-menu li a {
+        font-size: 12px;
+    }
+
+    .page-container {
+        border-radius: 15px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 8px;
+    }
+
+    .profile-page {
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .display-name {
+        font-size: 28px;
+        margin: 8px 0;
+    }
+
+    .welcome-tag {
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    .brief-text {
+        margin: 8px 0;
+        font-size: 16px;
+    }
+
+    .profile-box {
+        flex-direction: column;
+        align-items: center;
+        margin: 8px 0;
+        margin-bottom: 20px
+    }
+
+    .profile-box-left {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 15px;
+        padding: 0 8px;
+    }
+
+    .profile-box-right {
+        width: 100%;
+        margin-top: 15px;
+        padding: 0 8px;
+    }
+
+    .candidate-image {
+        height: 250px;
+        width: 250px;
+        margin: 8px;
+    }
+
+    .candidate-image-img {
+        height: 200px;
+        width: 120px;
+        margin: 8px;
+    }
+
+    .tech-stack-box {
+        margin: 30px 15px 15px;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .tech-stack-box h1 {
+        font-size: 20px;
+    }
+
+    .tech-stack-box hr {
+        width: 100px;
+        height: 3px;
+    }
+
+    .tech-stack-skills {
+        flex-direction: row; /* Ensure skills remain in a row layout */
+        align-items: baseline;
+        justify-content: space-around; /* Space items evenly */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        margin-top: 0px;
+    }
+
+    .programming-languages,
+    .web-development,
+    .database-technologies,
+    .salesforce-platform,
+    .framework-tools {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1; /* Ensure items take equal space */
+        gap: 15px;
+        margin-top: 0px;
+    }
+
+    .programming-languages h3,
+    .web-development h3,
+    .database-technologies h3,
+    .salesforce-platform h3,
+    .framework-tools h3 {
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .salesforce-platform p,
+    .skill {
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+    }
+
+    .skill img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .about-me-section {
+        margin: 30px 15px 15px;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .about-me-section h1 {
+        font-size: 20px;
+    }
+
+    .about-me-section hr {
+        width: 100px;
+        height: 3px;
+    }
+
+    .about-me {
+        font-size: 14px;
+        margin: 1.5rem;
+    }
+
+    .experience-section {
+        margin: 30px 15px 15px;
+        border-radius: 15px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .experience-section h1 {
+        font-size: 20px;
+    }
+
+    .experience-section hr {
+        width: 100px;
+        height: 3px;
+    }
+
+    .timeline-item {
+        gap: 15px;
+        align-items: center;
+    }
+
+    .timeline-left {
+        width: 100%; /* Full width for better readability */
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .timeline-date {
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .timeline-right {
+        width: 100%;
+        height: fit-content;
+        padding-left: 0;
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-right::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        margin: 10px auto;
+    }
+
+    .timeline-right h2 {
+        font-size: 16px;
+    }
+
+    .timeline-right h3 {
+        font-size: 14px;
+    }
+
+    .timeline-info {
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    .company-head {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .company-dez {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .timeline-info ul {
+        list-style: inside;
+        padding-left: 0;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .education-section {
+        margin: 30px 15px 15px;
+        border-radius: 15px;
+        padding: 15px;
+    }
+
+    .education-section h1 {
+        font-size: 20px;
+    }
+
+    .education-section hr {
+        width: 100px;
+        height: 3px;
+    }
+
+    .education-box {
+        align-items: center;
+        gap: 15px; /* Add gap between stacked items */
+    }
+
+    .to-flex-container {
+        align-items: center;
+    }
+
+    .logo-container {
+        height: auto;
+        width: 100%;
+        max-width: 150px; /* Maintain the aspect ratio */
+        margin-bottom: 15px; /* Add spacing */
+    }
+
+    .box-container {
+        margin: 15px;
+        width: 100%;
+    }
+
+    .header {
+        border-radius: 15px 15px 0 0;
+        background-color: rgba(14, 107, 168, 0.467);
+        width: 100%;
+    }
+
+    .education-header {
+        flex-direction: column; /* Stack items vertically */
+        gap: 8px; /* Add gap between stacked items */
+        margin: 8px 0;
+        text-align: center; /* Center align text */
+    }
+
+    .education-header h2 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .education-header p {
+        font-size: 10px;
+    }
+
+    .education-header-subhead {
+        margin: 8px 0;
+        text-align: center; /* Center align text */
+    }
+
+    .education-header-subhead h4 {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 8px;
+    }
+
+    .education-body {
+        margin: 12px;
+        text-align: justify;
+    }
+
+    .contact-section {
+        margin: 50px 20px 20px;
+        padding: 15px;
+    }
+
+    .contact-section h1 {
+        font-size: 24px;
+    }
+
+    .contact-section hr {
+        width: 150px;
+        height: 4px;
+    }
+
+    .contact-container {
+        align-items: center;
+        gap: 20px;
+    }
+
+    .details-box {
+        width: 100%;
+        height: fit-content;
+        margin-right: 0;
+        padding: 20px;
+        background: rgb(214, 214, 11);
+    }
+
+    .details-box h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .map-container {
+        width: 100%;
+    }
+
+    .contact-form-box {
+        width: 100%;
+        background: rgb(214, 214, 11);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .contact-form {
+        align-items: center;
+        font-weight: 400;
+        margin: 1.5rem;
+    }
+
+    .svg-icons svg {
+        height: 30px;
+        width: 30px;
+        gap: 8px;
+    }
+
+    .contact-icons {
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+    }
+
+    .contact-info {
+        display: flex;
+        align-items: center;
+    }
+
+
+        .project-hero {
+            flex-direction: column; /* Stack the items vertically */
+            align-items: center; /* Center align items for a cleaner layout */
+            margin: 10px; /* Reduce margin */
+        }
+    
+        .hero-left, .hero-right {
+            width: 100%; /* Full width for both left and right sections */
+        }
+        .hero-left img {
+            height: auto; /* Adjust height automatically */
+            width: 80%; /* Adjust width to fit the screen, maintaining aspect ratio */
+            max-width: 400px; /* Ensure it doesn't exceed its new max size */
+        }
+    
+        .hero-right h1 {
+            font-size: 36px; /* Reduce font size for smaller screens */
+        }
+        .hero-right p {
+            font-size: 16px; /* Adjust paragraph font size for readability */
+        }
+    
+        .projects-display {
+            justify-content: center; /* Center the projects for better spacing */
+            margin-left: 20px; /* Adjust margins for smaller screens */
+            margin-right: 20px;
+        }
+    
+        .projects {
+            flex: 1 1 100%; /* Each project takes full width of the container */
+            margin-bottom: 20px; /* Add bottom margin for spacing between stacked items */
+        }
+    
+        .projects h2 {
+            font-size: 20px; /* Reduce font size for project titles */
+        }
+    
+        .project-description {
+            font-size: 14px; /* Reduce font size for descriptions */
+        }
+    
+    
+
+    .certificate-hero {
+        flex-direction: column; /* Stack the items vertically */
+        align-items: center; /* Center align items for a cleaner layout */
+        margin: 10px; /* Reduce margin for smaller screens */
+    }
+
+    .certificate-hero-left {
+        width: 100%; /* Full width for the container */
+    }
+    .certificate-hero-left img {
+        width: 80%; /* Adjust width to fit the screen, maintaining aspect ratio */
+        height: auto; /* Adjust height automatically */
+        max-width: 600px; /* Ensure it doesn't exceed its original max size */
+    }
+
+    .certificate-display {
+        justify-content: center; /* Center the certificates for better spacing */
+        margin-left: 20px; /* Adjust margins for smaller screens */
+        margin-right: 20px;
+    }
+
+    .certificate {
+        flex: 1 1 100%; /* Each certificate takes full width of the container */
+        margin-bottom: 20px; /* Add bottom margin for spacing between stacked items */
+    }
+
+    .certificate-details {
+        align-items: center; /* Center-align the details for a consistent look */
+    }
+
+    .cert-head img {
+        height: 90px; /* Adjust image size in the certificate header */
+        width: 110px;
+    }
+    .footer-bar, .footer-cover {
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 800px) {
+    /* Navbar adjustments */
+    .main-link{
+        align-items: start;
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 8px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: end;
+        margin-right: 0;
+        gap: 10px;
+    }
+
+    .main-link {
+        margin-left: 0;
+    }
+
+    .mobile-nav{
+        display: block;
+    }
+
+    /* Profile container adjustments */
+    .profile-page {
+        flex-direction: column;
+    }
+
+    .profile-box {
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    .profile-box-left, .profile-box-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .candidate-image {
+        width: 20rem;
+        height: auto;
+    }
+
+    .candidate-image-img {
+        width: 10rem;
+        height: auto;
+    }
+
+    /* Tech stack container adjustments */
+    .tech-stack-box {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    .tech-stack-skills{
+        align-items: baseline;
+    }
+
+    /* About Me, Experience, and Education Sections */
+    .about-me-section, .experience-section, .education-section, .contact-section {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    .bullets{
+        font-size: 12px;
+        text-align: justify;
+        margin: 5px;
+    }
+
+    .contact-container, .timeline-item{
+        flex-direction: column;
+    }
+    .timeline-date{
+        margin-top: 5px;
+    }
+
+    .timeline-right {
+        width: 100%;
+    }
+
+    /* Project and Certifications Sections */
+    .project-hero, .certificate-hero {
+        flex-direction: column;
+    }
+
+    .hero-left, .certificate-hero-left {
+        width: 100%;
+    }
+
+    .hero-left img, .certificate-hero-left img {
+        width: 100%;
+        height: auto;
+    }
+
+    .projects, .certificate {
+        flex: 1 1 100%;
+    }
+
+    /* Footer adjustments */
+    .footer-bar, .footer-cover {
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 500px) {
+    /* Navbar adjustments */
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        margin-left: 0; /* Remove negative margin */
+        margin-bottom: 10px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        margin-right: 5px;
+        gap: 8px; /* Reduce gap */
+        font-size: 14px; /* Smaller font size for menu items */
+    }
+
+    .main-link {
+        justify-content: right;
+        margin-left: 5px;
+        font-size: 20px; /* Adjust font size */
+        margin-left: 0; /* Align correctly */
+    }
+
+    .mobile-nav{
+        display: block;
+    }
+
+    /* Profile container adjustments */
+    .profile-page {
+        flex-direction: column;
+        font-size: 14px; /* Reduce font size for better readability */
+        overflow-x: hidden;
+    }
+
+    .display-name, .welcome-tag, .brief-text {
+        font-size: 16px; /* Adjust text size for smaller displays */
+    }
+
+    .profile-box {
+        flex-direction: column;
+        margin: 10px;
+        margin-bottom: 15px;
+    }
+
+    .profile-box-left, .profile-box-right {
+        width: 100%; /* Full width */
+        margin-top: 20px; /* Increased top margin for clarity */
+    }
+
+    .candidate-image {
+        width: 10rem; /* Full container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .candidate-image-img {
+        width: 5rem; /* Full width */
+        height: auto; /* Adjust height automatically */
+    }
+
+    /* Tech stack container adjustments */
+    .tech-stack-box {
+        margin: 15px;
+        margin-top: 10rem;
+        margin-bottom: 70px;
+    }
+
+    .tech-stack-skills {
+        flex-direction: column;
+        display: none;
+    }
+
+    .mobile-stack{
+        display: block;   
+    }
+
+    /* About Me, Experience, and Education Sections */
+    .experience-section, .education-section, .contact-section {
+        margin: 15px;
+        font-size: 10px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    .about-me-section{
+        margin: 15px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    .about-me{
+        font-size: 10px;
+    }
+
+    .timeline-right, .to-flex-container, .contact-container {
+        flex-direction: column;
+    }
+
+    .timeline-right {
+        width: 100%; /* Full width for better layout */
+    }
+    .bullets{
+        font-size: 10px;
+        text-align: justify;
+        margin: 5px;
+    }
+
+    /* Project and Certifications Sections */
+    .project-hero, .certificate-hero {
+        flex-direction: column;
+    }
+
+    .hero-left, .certificate-hero-left {
+        width: 100%; /* Adjust width */
+    }
+
+    .hero-left img, .certificate-hero-left img {
+        width: 100%; /* Adjust width */
+        height: auto; /* Adjust height */
+    }
+
+    .projects, .certificate {
+        flex: 1 1 100%; /* Each item takes full width */
+    }
+
+    /* Footer adjustments */
+    .footer-bar, .footer-cover {
+        margin-right: 0;
+    }
+}
