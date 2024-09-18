@@ -432,15 +432,15 @@
                                 </div>
                             </div>
                             <div class="certificate-display">
-                                <template for:each={certiData.data} for:item="item" for:index="index">
+                                <template for:each={sortedData} for:item="item">
                                     <div key={item.Id} class="certificate">
                                         <a href={item.Certification_Link__c} style="text-decoration: none;">
                                             <div class="cert-head">
-                                                <img src={coursera_logo_Url}>
+                                                <img src={imageUrl} alt="Certificate Logo">
                                             </div>
                                             <div class="certificate-details">
                                                 <h2 style="color: rgb(0, 28, 85);">{item.Name}</h2>
-                                                <p style="color: rgb(127, 141, 170);">- {item.Certification_Platform__c}</p>
+                                                <p class="certificateName" style="color: rgb(127, 141, 170);">- {item.Certification_Platform__c}</p>
                                             </div>
                                         </a>
                                     </div>

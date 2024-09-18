@@ -14,6 +14,8 @@ import projectHero from '@salesforce/resourceUrl/Project_Hero';
 import certificateHero from '@salesforce/resourceUrl/Certificate_Hero';
 import courseraLogo from '@salesforce/resourceUrl/Coursera_Logo';
 import BG_Image from '@salesforce/resourceUrl/BG_Image';
+import aws_logo from '@salesforce/resourceUrl/AWS_Logo';
+import default_Image from '@salesforce/resourceUrl/default_Image';
 
 
 
@@ -63,16 +65,59 @@ export default class Portfolio extends NavigationMixin(LightningElement) {
         this.profile_page = false;
     }
 
+    @track sortedData;
+    error;
+
     @wire(certiData)
-    certiData;
+    wiredCertificates({ error, data }) {
+        if (data) {
+            this.sortedData = [...data].sort((a, b) => {
+                // Assuming 'createdByDate' is in YYYY-MM-DD format or similar
+                return new Date(b.CreatedDate) - new Date(a.CreatedDate);
+            });
+            this.error = undefined;
+        } else if (error) {
+            this.error = error;
+            this.sortedData = undefined;
+        }
+    }
 
     @track certificate_page = false;
     certificate_Url = certificateHero;
-    coursera_logo_Url = courseraLogo;
     onCertificateClick(){
         this.certificate_page = true;
         this.project_page = false;
         this.profile_page = false;
+    }
+
+    @track imageUrl = default_Image; // Default image URL to start with
+
+    // Mapping of platform names to their logos
+    logoUrls = {
+        'imageUrl' : default_Image,
+        'Coursera': courseraLogo,
+        'AWS': aws_logo
+    };
+
+    // Function to update image URL based on the platform
+    updateImageUrl(platformName) {
+        this.imageUrl = this.logoUrls[platformName] || default_Image;
+    }
+
+    renderedCallback() {
+        // Assuming `certificateName` is obtained from a data attribute or passed as a property/api
+        const certificateName = this.getCertificateName();
+        this.updateImageUrl(certificateName);
+    }
+
+    getCertificateName() {
+        // This is a placeholder. You might want to derive the name from component's data or attribute
+        const certificateElement = this.template.querySelector('.certificateName');
+        console.log("Getting Name: "+ certificateElement);
+        if (certificateElement) {
+            return certificateElement.textContent.trim().replace('-', '').trim();
+        }
+        return '';
     }
 
     @track isResumeModalOpen = false;

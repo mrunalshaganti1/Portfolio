@@ -49,7 +49,7 @@ public with sharing class portfolioController {
     public static List<Certification__c> certificationsController(){
         List<Certification__c> cerList = new List<Certification__c>();
 
-        cerList = [SELECT Id, Name, Certification_Link__c, Certification_Platform__c, Portfolio_Profile__r.Name
+        cerList = [SELECT Id, Name, Certification_Link__c, Certification_Platform__c, Portfolio_Profile__r.Name, CreatedDate
                     FROM Certification__c 
                     WHERE Portfolio_Profile__r.Name = 'Mrunal Shaganti'];
 
